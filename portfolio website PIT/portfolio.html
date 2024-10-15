@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: justify;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f0f7; /* Lighter purple shade for the background */
+            color: #64087a;
+            background-image: url('final bg.gif');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 22px;
+            color: #723ca8;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-left: 50px;
+            margin-top: 12px;
+        }
+
+        nav {
+            margin-top: 20px; /* Add space above the navigation */
+            background-color: transparent;
+            text-align: right;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 6px 16px;
+            background-color: #723ca8; /* Muted purple for navigation links */
+            margin-left: 10px; /* Creates spacing between links */
+            border-radius: 5px; /* Optional: Adds rounded corners to the links */
+            
+        }
+
+        nav a:hover {
+            background-color: #8b5ff1; /* A lighter, more vibrant purple for hover */
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding-top: 20px; /* Adjust this value to control space above content */
+        }
+
+        .section-image {
+            width: 80%;
+            height: auto;
+            border-radius: 500px;
+            margin-bottom: 2px;
+        }
+
+        .home-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .home-text {
+            width: 550%; /* Adjust as needed */
+            text-align: justify;
+            margin-left: 100px;
+            margin-bottom: 10%;
+            margin-top: 50px;
+     
+        }
+
+        .home-image {
+            width: 600%; /* Adjust as needed */
+            text-align: right;
+            margin-right: 100px;
+            margin-top: -50px;
+        }
+
+        .about, .project, .skill, .education, .work, .contact {
+            
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5%;
+            box-shadow: 0 2px 5px rgba(150, 30, 248, 0.1);
+        }
+
+        h2, .logo {
+            color: #5e548e; /* Using the deep purple shade for headings */
+        }
+
+        p {
+            color: #492652;
+        }
+
+        .project-image {
+            width: 50%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .begin-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #723ca8; /* Use the same purple color from the nav links */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px; /* Space above the button */
+            transition: background-color 0.3s ease;
+        }
+
+        .begin-button:hover {
+            background-color: #8b5ff1; /* Lighter purple for hover, similar to nav link hover */
+        }
+
+        .begin-button-link {
+            text-decoration: none; /* Removes underline from links */
+        }
+
+        .about-video {
+            width: 58%; /* Adjust the width as needed */
+            float: left; /* Float the video to the left */
+            margin-right: 20px; /* Add some space to the right of the video */
+            border-radius: 10px; /* Optional: Add rounded corners to the video */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow to the video */
+        }
+
+        .about-details {
+            text-align: justify;
+            margin-right: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+        /* You can add styles for the details section here */
+        }
+
+
+        footer {
+            background-color: #9F70FD; /* A deep purple shade */
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            margin-top: 40px; /* Ensures there's space before the footer */
+        }
+
+
+        .slideshow-container {
+            width: 100%; /* Changed to 100% for full width */
+            margin: auto;
+            overflow-x: auto; /* Enable horizontal scrollbar */
+            white-space: nowrap; /* Keep slides in a single line */
+            
+        }
+
+        .mySlides {
+            display: inline-block;
+            width: 50%; /* Adjust slide width as needed */
+            vertical-align: top; /* Ensure slides align at the top */
+            box-sizing: border-box; /* Include padding and border in width calculation */
+            padding: 10px; /* Added padding for spacing */
+        }
+
+        .mySlides img {
+            width: 100%;
+            display: block;
+        }
+
+        .project-description {
+            text-align: center;
+            margin-top: 20px;
+            text-align: justify;
+        }
+
+        ul li {
+            background: #E3DFFD;
+            color: rgb(62, 5, 100);
+            padding: 5px;
+            margin-left: 20px;
+            border-radius: 15%;
+        
+        }
+
+        ul {
+            background: #C1AEFC;
+            padding: 20px;
+            margin-right: 20px;
+            color: #350544;
+            border-radius: 10%;
+            max-width: 600px;
+        }
+        #contact {
+            font-family: Arial, sans-serif; /* Sets the font for the contact section */
+            background-color: #C1AEFC; /* Light grey background */
+            padding: 17px; /* Adds space around the content */
+            border-radius: 20px; /* Rounded corners */
+            text-align: left;
+            margin-top: 50px;
+            
+            max-width: 1050px; /* Limits section width */
+        }
+        
+
+        #contact h2 {
+            text-align: center; /* Centers the heading */
+            color: #333; /* Dark grey color for the text */
+        }
+
+        .contact-link {
+            color: #333; /* Dark grey text */
+            text-decoration: none; /* Removes underline from links */
+            font-size: 16px; /* Sets the size of the text */
+        }
+
+        .contact-link i {
+            margin-right: 10px; /* Space between icon and text */
+            color: #555; /* Slightly lighter text color for icons */
+        }
+
+        .contact-link:hover, .contact-link:focus {
+            color: #0056b3; /* Changes text color on hover/focus */
+            text-decoration: underline; /* Adds underline on hover/focus */
+}
+
+
+        
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><b>AZTECH</b></div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#work">Work Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    
+    <!-- Content Sections -->
+    <section id="home" class="container">
+        <div class="home-content">
+            <div class="home-text">
+                <h2>Hi, what's up! I'm Alaiza Rose Olores, a 2nd year BSIT student.</h2>
+                <p>I'm a freelance graphic designer and a web developer,
+                    based in Cagayan de Oro City. With a passion for creating beautiful, 
+                    functional, and impactful designs and contents, I've dedicated my career to helping businesses and individuals bring their ideas to life.</p>
+                <h4>Explore my Work</h4>
+                <p>Feel free to browse my portfolio to see examples of my past projects. Each piece in my collection represents a story of collaboration and innovation.</p>
+                
+                    <a href="#about" class="begin-button-link"><button class="begin-button">Let's begin</button></a>
+                </div>
+            <div class="home-image">
+                <img src="profile.gif" alt="Home Image" class="section-image">
+                </div>
+            </div>
+
+    </section>
+    
+
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <!-- Embedded Video -->
+        <video class="about-video" controls>
+            <source src="video intro.mp4" type="video/mp4">
+            <!-- Add more source tags for different video formats -->
+            Your browser does not support the video tag.
+        </video>
+        <div class="about-details">
+            <p>My name is Alaiza Rose Olores, and I am a 20-year-old second-year student pursuing a Bachelor of
+                Science in Information Technology (BSIT) at the University of Science and Technology of Southern Philippines. My career aspirations lie in the realm of 
+                continuous personal and professional growth, enhancing my skills, and achieving financial stability. 
+                I chose Information Technology as my field of study, recognizing our era's shift towards a 
+                technology-driven society. This field's constant evolution assures the growing need for skilled
+                professionals, making my choice not only a practical one but also a commitment to stay updated of
+                the latest trends and innovations in the industry.</p> 
+            <p>I bring strong dedication, reliability, 
+                and responsibility to both team collaborations and independent initiatives. I work well under 
+                pressure and get things done on time. I'm also constantly willing to learn new stuff. With a 
+                penchant for embracing added responsibilities, I manage my time effectively through careful 
+                planning. I’m approachable and friendly, I value open communication and strive to make positive
+                contributions both as a student and as a future professional in the IT industry.</p>
+            <h3>What I Do</h3>
+            <p>I offer a range of services from graphic design to website design, and content creation. My approach is always tailored to meet the unique needs of each project,
+                 ensuring that every detail aligns perfectly with your vision and objectives.</p>
+            
+            <h3>Available for Hire</h3>
+            <p>I am currently available for freelance projects and eager to explore new opportunities. Whether you need a graphic designer, 
+                I'm here to help you achieve your goals with high-quality results.</p>
+            <h3>Let's Connect!</h3>
+            <p>Ready to start your project? Contact me today, and let’s create something amazing together!</p>
+        </div>
+    </section>
+    
+    
+    <section id="education" class="container">
+        <h2>Education</h2>
+        <ul>
+            <li><b> Camaman-an Elementary School</b> 
+                <ul>
+                    <li>2010 - 2016</li>
+                    <li>Graduated With Honor</li>
+                </ul>
+            </li>
+            <li><b>Cagayan de Oro National High School- JHS</b>
+                <ul>
+                    <li>2016 - 2020 (STE Curriculum)</li>
+                    <li>Graduated With Honor</li>
+                </ul>
+            </li>
+            <li><b>Cagayan de Oro National High School- SHS</b> 
+                <ul>
+                    <li>2020 - 2022 (Accountancy Business and Management)</li>
+                    <li>Graduated With High Honor</li>
+                </ul>
+            </li>
+            <li><b>University of Science and Technology of Southern Philippines</b> 
+                <ul>
+                    <li>2022 - present</li>
+                    <li>2nd year, BS in Information Technology</li>
+                </ul>
+            </li>
+        </ul>
+        
+        <h3>Achievements</h3>
+        <ul>
+            <li><b>Leadership Awardee (2020)</b></li>
+            <li><b>Conduct Awardee (2020 & 2022)</b><em> from Cagayan de Oro National High School JHS</em></li>
+            <li><b>Service Awardee (2022)</b><em> from Cagayan de Oro National High School - SHS</em></li>
+            <li><b>Excellence Awardee (2022)</b><em> from Cagayan de Oro National High School - SHS</em></li>
+            <li><b>Dean's Lister - 1st & 2nd Semester</b><em> (First Year S.Y. 2022-2023) at USTP</em></li>
+        </ul>
+    
+    </section>
+    
+    <section id="skills" class="container">
+        <h2>Skills</h2>
+        <ul>
+            <li>Basic Computer Literacy Skills</li>
+            <li>Microsoft Office</li>
+            <li>Graphic Designing</li>
+            <li>Basic Python Programming and HTML/CSS</li>
+            <li>Basic Video Editing</li>
+            <li>Creative Thinking</li>
+            <li>Project Management</li>
+            <li>Collaborative</li>
+            <li>Leadership</li>
+            <li>Active Listener</li>
+            <li>Meeting deadlines</li>
+        </ul>
+    </section>
+    
+    <section id="work" class="container">
+        <h2>Work/Organization Experience</h2>
+        <ol>
+            <li><b>Student Tutor (2020-2022)</b>
+                <ul>
+                    <li>Amidst the pandemic, I undertook the task of tutoring our young elementary neighbor. Balancing between moments of enjoyment and fatigue, the experience of guiding her studies, collaborating on projects, and witnessing her growth proved to be truly fulfilling.</li>
+                </ul>
+            </li><br>
+            <li><b>USTP Scholars Society - Department of Academic Affairs Secretary (2022-2023)</b>
+                <ul>
+                    <li>Being the Secretary of the DAA was demanding and challenging, involving detailed meeting minutes, task reminders, and various paperwork. Despite the exhaustion, the experience led to valuable learning and personal growth.</li>
+                </ul>
+            </li><br>
+            <li><b>University City Scholars - Department of Internal & External Affairs - Regular Staff (2023-2024)</b>
+                <ul>
+                    <li>Our responsibility involves securing sponsors to contribute goods and products for UCS activities, which will be presented as prizes for the winners.</li>
+                </ul>
+            </li><br>
+            <li><b>USS - OVP_Director of Special Legislative Operation (2023-2024)</b>
+                <ul>
+                    <li>My responsibility is to oversee and coordinate the special legislative operations and activities.</li>
+                </ul>
+            </li><br>
+            <li><b>Remotasks Philippines (December 2023 - Present)</b>
+                <ul>
+                    <li>Onsite Tasker/Freelancer at Speakify Team CDO │ 2D Dragon, 2D Bumblebees, and 3D LiDAR Anteater Project</li>
+                </ul>
+            </li><br>
+        </ol>
+    
+    
+    </section>
+
+    <section id="projects" class="container">
+        <!-- Project 1 -->
+        <div class="project">
+            <h2>Projects</h2>
+            <h1><center>ConvoMind: A Redesign ChatGPT</center></h1>
+            <div class="slideshow-container" id="project1Slides">
+                <!-- Slides for Project 1 -->
+                <div class="mySlides">
+                    <img src="ConvoMind1.png" alt="Project 1 Image 1">
+                </div>
+                <div class="mySlides">
+                    <img src="p1.png" alt="Project 1 Image 2">
+                </div>
+                <div class="mySlides">
+                    <img src="p2.png" alt="Project 1 Image 3">
+                </div>
+                <div class="mySlides">
+                    <img src="p3.png" alt="Project 1 Image 4">
+                </div>
+                <div class="mySlides">
+                    <img src="p4.png" alt="Project 1 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="p5.png" alt="Project 1 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="p6.png" alt="Project 1 Image 5">
+                </div><div class="mySlides">
+                    <img src="p7.png" alt="Project 1 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="p8.png" alt="Project 1 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="p6.png" alt="Project 1 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="p7.png" alt="Project 1 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="p8.png" alt="Project 1 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="redesign (4).png" alt="Project 1 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="redesign (5).png" alt="Project 1 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="redesign (6).png" alt="Project 1 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="redesign (11).png" alt="Project 1 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="redesign (10).png" alt="Project 1 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="redesign.png" alt="Project 1 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="32.png" alt="Project 1 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="33.png" alt="Project 1 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="37.png" alt="Project 1 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="39.png" alt="Project 1 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="40.png" alt="Project 1 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="41.png" alt="Project 1 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="42.png" alt="Project 1 Image 5">
+                </div>
+                <!-- Add more slides as needed -->
+            </div>
+            <div class="project-description">
+                <p>This presentation introduces the transformation of ChatGPT into an improved conversational platform with a 
+                    strong focus on user experience. The platform now boasts a user-friendly design, smooth navigation, and the
+                     latest technology to enhance interactions. With attention to visual appeal and ease of use, ChatGPT offers 
+                     an engaging digital experience. Emphasizing principles of Human Computer Interaction, the platform actively 
+                     listens to user concerns and feedback, ensuring a user-driven approach. New features have been added to make 
+                     the platform more dynamic and responsive. </p>
+                <h4>Project Proponents:</h4>
+                <p>Alaiza Rose Olores │ Honey Marie Petil │ Maia Bless Apa-ap │ Pearl Austin Omectin │ Lenard Balansag</p>
+                <p><b>Link for the full powerpoint presentation of our project:</b> https://www.canva.com/design/DAF6aHfqL_A/yrSLW76A8WNQud7Pv5RFEg/edit?utm_content=DAF6aHfqL_A&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="project2" class="container">
+        <!-- Project 2 -->
+        <div class="project">
+            <h1><center>Car Rental System</center></h1>
+            <div class="slideshow-container" id="project2Slides">
+                <!-- Slides for Project 2 -->
+                <div class="mySlides">
+                    <img src="2P1.png" alt="Project 2 Image 1">
+                </div>
+                <div class="mySlides">
+                    <img src="2P2.png" alt="Project 2 Image 2">
+                </div>
+                <div class="mySlides">
+                    <img src="2P3.png" alt="Project 2 Image 3">
+                </div>
+                <div class="mySlides">
+                    <img src="2P4.png" alt="Project 2 Image 4">
+                </div>
+                <div class="mySlides">
+                    <img src="2P5.png" alt="Project 2 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="2P6.png" alt="Project 2 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="2P7.png" alt="Project 2 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="2P8.png" alt="Project 2 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="2P9.png" alt="Project 2 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="2P10.png" alt="Project 2 Image 5">
+                </div>
+                <!-- Add more slides as needed -->
+            </div>
+            <div class="project-description">
+                <p>This was our Performance Innovative Task (PIT) in Object-Oriented Programming during the first 
+                    semester of our second year. We were assigned to create a Car Rental System using a GUI in
+                     the Java programming language.
+
+                    The Car Rental System project is a comprehensive application designed to manage the rental
+                     process for a car rental service. The system aims to streamline the workflow from customer 
+                     registration to vehicle returns. This project emphasizes the practical application of Object-Oriented
+                      Programming (OOP) principles, GUI development, and database integration.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="project3" class="container">
+        <!-- Project 3 -->
+        <div class="project">
+            <h3>Random Projects</h3>
+            <div class="slideshow-container" id="project3Slides">
+                <!-- Slides for Project 3 -->
+                <div class="mySlides">
+                    <img src="3P1.jpg" alt="Project 3 Image 1">
+                </div>
+                <div class="mySlides">
+                    <img src="3P11.png" alt="Project 3 Image 2">
+                </div>
+                <div class="mySlides">
+                    <img src="3P12.png" alt="Project 3 Image 3">
+                </div>
+                <div class="mySlides">
+                    <img src="3P4.jpg" alt="Project 3 Image 4">
+                </div>
+                <div class="mySlides">
+                    <img src="3P5.jpg" alt="Project 3 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="3P6.jpg" alt="Project 3 Image 5">
+                </div>
+               
+                <div class="mySlides">
+                    <img src="3P8.jpg" alt="Project 3 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="3P9.jpg" alt="Project 3 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="3P10.jpg" alt="Project 3 Image 5">
+                </div>
+                <div class="mySlides">
+                    <img src="3P13.png" alt="Project 3 Image 5">
+                </div>
+                <!-- Add more slides as needed -->
+            </div>
+            <div class="project-description">
+                <p>These are various projects I've created, including logo designs, tarpaulins, infographics, posters, and more.</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="contact" class="container">
+        <h1>Contact</h1>
+        <h4>Ready to start your project? Contact me today, and let’s create something amazing together!</h4>
+        <p><a href="mailto:olores.alaiza88@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> olores.alaiza88@gmail.com</a></p>
+        <p><a href="https://github.com/alaizaolores" class="contact-link"><i class="fab fa-github"></i> https://github.com/alaizaolores</a></p>
+        <p><a href="tel:+11234567890" class="contact-link"><i class="fas fa-phone"></i> 123-456-7890</a></p>
+        <p><a href="https://facebook.com/yourFacebookProfile" class="contact-link"><i class="fab fa-facebook"></i> Facebook</a></p>
+        <p><a href="https://instagram.com/yourInstagramProfile" class="contact-link"><i class="fab fa-instagram"></i> Instagram</a></p>
+    </section>
+        
+    
+ 
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Copyright 2024 AZTECH Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        function plusSlides(n, wrapperId) {
+            let slideWrapper = document.getElementById(wrapperId);
+            let slides = slideWrapper.getElementsByClassName("mySlides");
+            let slideIndex = parseInt(slideWrapper.getAttribute('data-slide-index')) || 0;
+            
+            slideIndex += n;
+            
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+            
+            if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+            }
+            
+            let offset = -(slideIndex * (100 / slides.length));
+            
+            if (slideIndex === 0 && n === -1) {
+                offset = -(slides.length - 1) * (100 / slides.length);
+            } else if (slideIndex === slides.length - 1 && n === 1) {
+                offset = 0;
+            }
+            
+            slideWrapper.style.transform = 'translateX(' + offset + '%)';
+            slideWrapper.setAttribute('data-slide-index', slideIndex.toString());
+        }
+    </script>
+</body>
+</html>
